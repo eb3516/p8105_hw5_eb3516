@@ -37,3 +37,11 @@ import=function(path){
 clean_df=map(file_names, import) |>
                bind_rows()
 ```  
+
+```{r}
+clean_df |>
+    ggplot(aes(x=Week_Num, y=value, color=subject))+geom_line()
+```
+
+
+
