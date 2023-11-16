@@ -19,3 +19,21 @@ scale_colour_discrete=scale_colour_viridis_d
 scale_fill_discrete=scale_fill_viridis_d
 ```
 
+
+## Question 2
+```{r}
+file_names= list.files(path= "./data/study", full.names=TRUE)
+import=function(path){
+    df=read_csv(path) |>
+      janitor::clean_names() |>
+      mutate(ID=path) |>
+      separate(ID, into=c("folder", "arm", "e2", "subject", "csv"), sep=c(5,8,9,11)) |>
+      arrange(arm, subject) |>
+    pivot_longer(week1:week8,
+                  names_to="week",
+                 values_to="value") |>
+      separate(week, into=c("W", "Week_Num"), sep="_")
+}
+clean_df=map(file_names, import) |>
+               bind_rows()
+```  
