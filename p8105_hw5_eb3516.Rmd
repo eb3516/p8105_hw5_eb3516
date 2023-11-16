@@ -2,7 +2,7 @@
 title: "p8105_hw5_eb3516"
 author: "Liz Bekerman"
 date: "2023-11-16"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
