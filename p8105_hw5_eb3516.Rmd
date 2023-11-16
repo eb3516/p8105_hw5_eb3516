@@ -1,0 +1,21 @@
+---
+title: "p8105_hw5_eb3516"
+author: "Liz Bekerman"
+date: "2023-11-16"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(broom)
+
+options(
+  ggplot2.continuous.colour="viridis",
+  ggplot2.continuous.fill="viridis"
+)
+
+scale_colour_discrete=scale_colour_viridis_d
+scale_fill_discrete=scale_fill_viridis_d
+```
+
