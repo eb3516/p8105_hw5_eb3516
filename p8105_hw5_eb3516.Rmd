@@ -43,5 +43,18 @@ clean_df |>
     ggplot(aes(x=Week_Num, y=value, color=subject))+geom_line()
 ```
 
+## Question 3
+```{r}
+sim=function(mu) {
+  data=tibble(
+    x=rnorm(n=30,mean=mu,sd=5)
+  )
 
+  output=data |>
+    t.test() |>
+    broom::tidy() |>
+    select(estimate, p.value) |>
+    rename(mu_hat=estimate, p_value=p.value)
+}
+```
 
